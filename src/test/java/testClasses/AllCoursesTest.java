@@ -1,6 +1,7 @@
 package testClasses;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -26,6 +27,7 @@ public class AllCoursesTest {
 	@BeforeClass
 	public void setUp() {
 		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
 		baseUrl = "https://learn.letskodeit.com/";
 		driver.get(baseUrl);
 		login = new LoginPage(driver);
